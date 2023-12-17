@@ -26,4 +26,7 @@ public class BusinessDataVO implements Serializable {
 
     private Integer newUsers;//新增用户数
 
+
+
+
 }
