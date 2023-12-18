@@ -1,6 +1,7 @@
 package com.sky.mapper;
 
 import com.github.pagehelper.Page;
+import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
 import org.apache.ibatis.annotations.Insert;
@@ -34,4 +35,13 @@ public interface EmployeeMapper {
     * 分页查询
     * */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /*
+    * 根据主键动态修改属性
+    * @param employee
+    * */
+    void update(Employee employee);
+
+    @Select("select * from employee where id=#{id}")
+    Employee selectById(long id);
 }
