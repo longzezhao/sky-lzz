@@ -41,6 +41,7 @@ public class CommonController {
     public Result upload(MultipartFile file) {
         log.info("文件上传:{}",file);
         String originalFilename = file.getOriginalFilename();
+        String url;
         try{
 
             PutObjectArgs args = PutObjectArgs.builder()
@@ -52,13 +53,21 @@ public class CommonController {
 
             minioClient.putObject(args);
 
+            url = minioClient.getPresignedObjectUrl(
+                    GetPresignedObjectUrlArgs.builder()
+                            .method(Method.GET)
+                            .bucket("sky-bucket")
+                            .object(originalFilename)
+                            .expiry(60*60)
+                            .build()
+            );
+
         }catch (Exception e){
             log.error("上传失败",e);
             return Result.success("上传失败");
         }
 
-
-        return Result.success("上传成功");
+        return Result.success(url);
     }
 
     @GetMapping("/file")

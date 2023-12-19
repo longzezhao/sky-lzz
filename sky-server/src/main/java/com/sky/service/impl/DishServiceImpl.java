@@ -31,12 +31,11 @@ public class DishServiceImpl implements DishService {
     public void saveWithFlavor(DishDTO dishDTO) {
 
         Dish dish = new Dish();
-
+        String[] strings = dishDTO.getImage().split("\\?");
+        dishDTO.setImage(strings[0]);
         BeanUtils.copyProperties(dishDTO,dish);
-
         //向菜品表插入一条数据
         dishMapper.insert(dish);
-
         //获取insert语句生成的主键值
         Long dishId = dish.getId();
 
