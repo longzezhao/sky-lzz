@@ -1,11 +1,9 @@
 package com.sky.controller.admin;
 
 import com.sky.result.Result;
-import com.sky.utils.MinioProp;
 import io.minio.*;
 import io.minio.errors.*;
 import io.minio.http.Method;
-import io.minio.messages.Item;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -15,13 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.websocket.server.PathParam;
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.HashMap;
-import java.util.List;
 
 
 /*

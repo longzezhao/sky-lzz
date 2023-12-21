@@ -1,6 +1,6 @@
 package com.sky.config;
 
-import com.sky.utils.MinioProp;
+import com.sky.properties.MinioProperties;
 import io.minio.MinioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class MinioConfiguration {
 
     @Autowired
-    private MinioProp minioProp;
+    private MinioProperties minioProp;
 
     @Bean
     public MinioClient minioClient(){

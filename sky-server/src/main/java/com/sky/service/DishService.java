@@ -2,6 +2,8 @@ package com.sky.service;
 
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
+import com.sky.entity.Category;
+import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +29,6 @@ public interface DishService {
     void startStop(Integer status, Long id);
 
     void update(DishDTO dishDTO);
+
+    List<Dish> selectByCategoryId(Long categoryId);
 }
