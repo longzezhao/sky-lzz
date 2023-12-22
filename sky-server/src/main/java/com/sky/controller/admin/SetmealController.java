@@ -50,7 +50,7 @@ public class SetmealController {
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("查询单个")
+    @ApiOperation("单个查询")
     public Result selectById(@PathVariable Long id){
         SetmealVO setmealVO= setmealService.selectById(id);
         return Result.success(setmealVO);
