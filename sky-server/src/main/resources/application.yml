@@ -19,7 +19,7 @@ spring:
   redis:
     host: ${sky.redis.host}
     port: ${sky.redis.port}
-    password: ${sky.redis.passowrd}
+    password: ${sky.redis.password}
     database: ${sky.redis.database}
 
 mybatis:
@@ -57,8 +57,8 @@ sky:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
 
-#minio:
-#  endpoint: http://192.168.0.46:9000
-#  accesskey: minioadmin
-#  secretKEY: minioadmin
-#
+minio:
+  endpoint: http://localhost:9000
+  accesskey: minioadmin
+  secretKEY: minioadmin
+
