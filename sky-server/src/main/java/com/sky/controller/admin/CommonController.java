@@ -39,7 +39,7 @@ public class CommonController {
         try{
 
             PutObjectArgs args = PutObjectArgs.builder()
-                    .bucket("sky-lzz-bucket")
+                    .bucket("sky-bucket")
                     .object(originalFilename)
                     .stream(file.getInputStream(), file.getSize(), -1L)
                     .contentType(file.getContentType())
@@ -50,7 +50,7 @@ public class CommonController {
             url = minioClient.getPresignedObjectUrl(
                     GetPresignedObjectUrlArgs.builder()
                             .method(Method.GET)
-                            .bucket("sky-lzz-bucket")
+                            .bucket("sky-bucket")
                             .object(originalFilename)
                             .expiry(60*60)
                             .build()
@@ -72,7 +72,7 @@ public class CommonController {
         String url = minioClient.getPresignedObjectUrl(
                 GetPresignedObjectUrlArgs.builder()
                         .method(Method.GET)
-                        .bucket("sky-lzz-bucket")
+                        .bucket("sky-bucket")
                         .object(filename)
                         .expiry(expires)
                         .build()
